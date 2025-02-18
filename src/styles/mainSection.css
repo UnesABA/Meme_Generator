@@ -1,0 +1,48 @@
+.main-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 40px;
+}
+
+.text-bar-container{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.text-bar{
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-search{
+  height: 60px;
+  width: 500px;
+  border-color: rgb(143, 143, 143);
+  border-radius: 8px;
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+.generation-button{
+  background: linear-gradient(to right, rgb(75, 0, 130), rgb(186, 85, 211));
+  height: 90px;
+  width: 1120px;
+  border-color: rgb(143, 143, 143);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.troll-face-pic{
+  width: 1120px;
+}

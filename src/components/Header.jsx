@@ -1,5 +1,6 @@
 import React from 'react'
 import '../index.css'
+import '../styles/header.css'
 import trollFace from '/Troll_Face.png'
 
 const Header = () => {
