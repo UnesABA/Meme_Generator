@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../index.css'
 import '../styles/mainSection.css'
+import memesData from '../memesData.js'
 
 const MainSection = () => {
+  const [memeImage, setMemeImage] = useState(null);
+
+  function getMemeImage(){
+    const memesArray = memesData.data.memes
+    const randomNumber = Math.floor(Math.random() * memesData.data.memes.length)
+  
+    setMemeImage(memesArray[randomNumber].url)
+  }
+
   return (
     <>
       <div className= "main-section">
 
-        <form className='container'>
+        <div className='container'>
+          
           <div className= "text-bar-container">
             <div className= "text-bar">
-              <label for="search">
+              <label htmlFor="search">
                 <h1>
                   Top text :
                 </h1>
@@ -19,7 +30,7 @@ const MainSection = () => {
             </div>
 
             <div className= "text-bar">
-              <label for="search">
+              <label htmlFor="search">
                 <h1>
                   Bottom text :
                 </h1>
@@ -29,12 +40,15 @@ const MainSection = () => {
           </div>
 
           <div>
-            <button className= "generation-button">Get a new meme image</button>
+            <button className= "generation-button" onClick= {getMemeImage}>
+              Get a new meme image
+            </button>
           </div>
-        </form>
+
+        </div>
 
         <div>
-          <img src="/Shut_up.png" alt="Troll Face" className= "troll-face-pic" />
+          <img src={memeImage} className="troll-face-pic" alt="Meme" />
         </div>
 
       </div>
