@@ -1,0 +1,22 @@
+body{
+  font-family: "Karla";
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(to right, rgb(75, 0, 130), rgb(186, 85, 211));
+  height: 100px;
+  padding: 20px 100px;
+}
+
+.troll-face{
+  width: 50px;
+}
+
+.title{
+  font-weight: bold;
+  letter-spacing: -3px;
+  color: white;
+}
