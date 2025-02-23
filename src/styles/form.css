@@ -1,0 +1,35 @@
+.form{
+  background: white;
+  height: 300px;
+  width: 350px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.input{
+  display: block;
+  margin: 20px;
+  height: 30px;
+  width: 300px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.sign-up{
+  background: linear-gradient(to right, rgb(75, 0, 130), rgb(186, 85, 211));
+  color: white;
+  width: 80px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 120px;
+  border: none;
+  border-radius: 5px;
+}

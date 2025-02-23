@@ -2,15 +2,34 @@ import React, { useState } from 'react'
 import '../index.css'
 import '../styles/mainSection.css'
 import memesData from '../memesData.js'
+import shut_up from '/Shut_up.png'
 
 const MainSection = () => {
-  const [memeImage, setMemeImage] = useState(null);
+  const [meme, setMeme] = useState({
+    topText: "", 
+    bottomText: "", 
+    randomImage: "https://i.imgflip.com/30b1gx.jpg"
+  });
+  const [allMemeImages, setAllMemeImages] = useState(memesData);
 
-  function getMemeImage(){
-    const memesArray = memesData.data.memes
-    const randomNumber = Math.floor(Math.random() * memesData.data.memes.length)
+  function getMeme(){
+    const memesArray = allMemeImages.data.memes
+    const randomNumber = Math.floor(Math.random() * allMemeImages.data.memes.length)
   
-    setMemeImage(memesArray[randomNumber].url)
+    setMeme(prevMeme => {
+      return {
+        ...prevMeme,
+        randomImage: memesArray[randomNumber].url
+      }
+    })
+  }
+
+  function handleChange(event){
+    const {name, value} = event.target
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      [name]: value
+    }))
   }
 
   return (
@@ -26,7 +45,14 @@ const MainSection = () => {
                   Top text :
                 </h1>
               </label>
-              <input type="search" placeholder="Shut up" className= "custom-search"/>
+              <input 
+                type="search" 
+                placeholder="Shut up" 
+                className= "custom-search"
+                name= "topText" 
+                value= {meme.topText}
+                onChange={handleChange}
+              />
             </div>
 
             <div className= "text-bar">
@@ -35,20 +61,33 @@ const MainSection = () => {
                   Bottom text :
                 </h1>
               </label>
-              <input type= "text" placeholder="And take my money" className= "custom-search"/>
+              <input 
+                type= "text" 
+                placeholder="And take my money" 
+                className= "custom-search" 
+                name= "bottomText" 
+                value= {meme.bottomText}
+                onChange={handleChange}
+              />
             </div>    
           </div>
 
           <div>
-            <button className= "generation-button" onClick= {getMemeImage}>
+            <button className= "generation-button" onClick= {getMeme}>
               Get a new meme image
             </button>
           </div>
 
         </div>
 
-        <div>
-          <img src={memeImage} className="troll-face-pic" alt="Meme" />
+        <div className= "meme">
+          {
+            meme ? <img src= {meme.randomImage} className= "troll-face-pic" />
+                 : <img src= {shut_up} className= "troll-face-pic" />
+          }
+
+          <h2 className= "top-text"   >{meme.topText}   </h2>
+          <h2 className= "bottom-text">{meme.bottomText}</h2>
         </div>
 
       </div>

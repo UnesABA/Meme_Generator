@@ -33,13 +33,13 @@
 }
 
 .generation-button{
+  font-family: "Karla", "sans-serif";
   background: linear-gradient(to right, rgb(75, 0, 130), rgb(186, 85, 211));
   height: 90px;
   width: 1120px;
   border: none;
   border-radius: 8px;
   color: white;
-  font-family: "Karla", "sans-serif";
   font-weight: 700;
   font-size: 35px;
   letter-spacing: -2px;
@@ -48,4 +48,36 @@
 
 .troll-face-pic{
   width: 1120px;
+}
+
+.meme{
+  position: relative;
+}
+
+.top-text,
+.bottom-text{
+  position: absolute;
+  color: white;
+}
+
+.top-text,
+.bottom-text{
+  font-family: Impact, sans-serif;
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  text-align: center;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.top-text{
+  top: 5%;
+}
+
+.bottom-text{
+  bottom: 5%;
 }
