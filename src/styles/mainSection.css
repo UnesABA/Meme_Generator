@@ -63,9 +63,9 @@
 .top-text,
 .bottom-text{
   font-family: Impact, sans-serif;
-  font-size: 4.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  font-size: 75px;
   color: white;
   text-shadow: 3px 3px 5px black;
   text-align: center;
@@ -79,5 +79,5 @@
 }
 
 .bottom-text{
-  bottom: 5%;
+  bottom: -10%;
 }
